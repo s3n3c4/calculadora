@@ -45,9 +45,10 @@ jobs:
         with:
           path: |
             build
-          key: ${{ runner.os }}-build-calculator-${{ hashFiles('**') }}
+          key: ${{ runner.os }}-build-calculator-${{ hashFiles('build/**') }}
           restore-keys: |
-            ${{ runner.os }}-build-
+            ${{ runner.os }}-build-calculator-
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -61,20 +62,20 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-        # with: 
-        #   submodules: recursive
+        with: 
+          submodules: recursive
       - name: Restore cache
         uses: actions/cache@v2
         with:
           path: |
             build
-          key: ${{ runner.os }}-build-calculator-${{ hashFiles('**') }}
+          key: ${{ runner.os }}-build-calculator-${{ hashFiles('build/**') }}
           restore-keys: |
-            ${{ runner.os }}-build-
+            ${{ runner.os }}-build-calculator-
       - name: Copy build artifacts to root directory
         run: |
-          ls -R build
-          cp -R build/static calculator/
+          ls .
+          cp -R build/static. calculator/
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
         env:
