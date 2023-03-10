@@ -45,18 +45,9 @@ jobs:
         with:
           path: |
             build
-          key: ${{ runner.os }}-build-${{ hashFiles('build/**') }}
+          key: ${{ runner.os }}-build-${{ hashFiles('build') }}
           restore-keys: |
             ${{ runner.os }}-build-
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: build
-          path: |
-            build
-      - name: List Directory
-        run: ls
 
 
   deploy:
@@ -72,7 +63,7 @@ jobs:
         with:
           path: |
             build
-          key: ${{ runner.os }}-build-${{ hashFiles('build/**') }}
+          key: ${{ runner.os }}-build-${{ hashFiles('build') }}
           restore-keys: |
             ${{ runner.os }}-build-
       - name: Copy build artifacts to root directory
