@@ -61,8 +61,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-        with: 
-          submodules: recursive
+        # with: 
+        #   submodules: recursive
       - name: Restore cache
         uses: actions/cache@v2
         with:
