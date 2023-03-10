@@ -1,4 +1,13 @@
 ## Calculator S3 NA AWS
+> Esse projeto inicia uma calculadora em nodejs 
+
+Para iniciar o projeto, digite:
+- `npm install`
+- `npm run build`
+- `npm start`
+
+E acesse o navegador ex: localhost:3000
+
 ### Nuvem escolhida AWS
 ### Optei por usar o famoso Terraform como IaC
 
@@ -24,5 +33,5 @@
 > Obs: O CI/CD já faz todo o processo de criação do S3 e deployment dos arquivos
 - O módulo do s3 está na pasta /terraform/
 
-- A esteira de pipeline foi dividada em 3 jobs: terraform npm-install-and-build e deploy
+- A esteira de pipeline foi dividada em 2 jobs: npm-install-and-build-and-deploy
 
