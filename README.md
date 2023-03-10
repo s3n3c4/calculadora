@@ -35,3 +35,4 @@ E acesse o navegador ex: localhost:3000
 
 - A esteira de pipeline foi dividada em 2 jobs: npm-install-and-build-and-deploy
 
+
