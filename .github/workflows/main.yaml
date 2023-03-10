@@ -52,6 +52,7 @@ jobs:
         run: |
           ls build/static/
           cp -R build/static calculator/
+          cp -R node_modules calculator/ --exclude=node_modules
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
         env:

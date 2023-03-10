@@ -15,6 +15,8 @@
 
 - Clone: `git clone --recurse-submodules https://github.com/s3n3c4/calculator.git`
 
+- Seta as varíaveis AWS_S3_BUCKET; AWS_SECRET_ACCESS_KEY; AWS_ACCESS_KEY_ID (github)
+
 
 - Criação da IAM pela console AWS
 - Criação do Bucket via Iac (Terraform)
