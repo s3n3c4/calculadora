@@ -40,8 +40,7 @@ jobs:
         run: | 
           npm install
           npm run build
-      - name: Cache build directory
-        run: ls
+      - name: Cache build directory 
         uses: actions/cache@v2
         with:
           path: |
@@ -56,6 +55,9 @@ jobs:
           name: build
           path: |
             build
+      - name: List Directory
+        run: ls
+
 
   deploy:
     runs-on: ubuntu-latest
