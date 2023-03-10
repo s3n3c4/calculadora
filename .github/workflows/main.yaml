@@ -41,6 +41,7 @@ jobs:
           npm install
           npm run build
       - name: Cache build directory
+        run: ls
         uses: actions/cache@v2
         with:
           path: |
@@ -62,8 +63,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-        with: 
-          submodules: recursive
+        # with: 
+        #   submodules: recursive
       - name: Restore cache
         uses: actions/cache@v2
         with:
