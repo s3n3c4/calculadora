@@ -73,13 +73,8 @@ jobs:
             ${{ runner.os }}-build-
       - name: Copy build artifacts to root directory
         run: |
-          ls .
-          cp -R build/static. calculator/
-      - name: Download artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: build
-          path: build
+          ls -R build
+          cp -R build/static calculator/
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
         env:
