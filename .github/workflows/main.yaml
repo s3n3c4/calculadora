@@ -50,8 +50,8 @@ jobs:
             ${{ runner.os }}-build-
       - name: Copy build artifacts to root directory
         run: |
-          ls .
-          cp -R build/static. calculator/
+          ls build/static/
+          cp -R build/static calculator/
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
         env:
