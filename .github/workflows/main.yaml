@@ -45,9 +45,9 @@ jobs:
         with:
           path: |
             build
-          key: ${{ runner.os }}-build-calculator-${{ hashFiles('build/**') }}
+          key: ${{ runner.os }}-build-${{ hashFiles('build/**') }}
           restore-keys: |
-            ${{ runner.os }}-build-calculator-
+            ${{ runner.os }}-build-
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
@@ -72,9 +72,9 @@ jobs:
         with:
           path: |
             build
-          key: ${{ runner.os }}-build-calculator-${{ hashFiles('build/**') }}
+          key: ${{ runner.os }}-build-${{ hashFiles('build/**') }}
           restore-keys: |
-            ${{ runner.os }}-build-calculator-
+            ${{ runner.os }}-build-
       - name: Copy build artifacts to root directory
         run: |
           ls .
