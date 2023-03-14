@@ -50,6 +50,7 @@ jobs:
             ${{ runner.os }}-build-
       - name: Copy build artifacts to root directory
         run: |
+          cp build/index.html .
           cp -R build/static calculator/
           rm -rf node_modules
       - name: Deploy to S3

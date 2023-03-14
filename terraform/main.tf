@@ -11,9 +11,9 @@ resource "aws_s3_bucket" "bucket" {
     Name = "My S3 Bucket"
   }
 
-  website {
-    index_document = "index.html"
-  }
+  # website {
+  #   index_document = "index.html"
+  # }
 
   lifecycle {
     ignore_changes = [tags]
