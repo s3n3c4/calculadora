@@ -28,6 +28,7 @@ jobs:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
 
   npm-install-and-build-and-deploy:
+    needs: terraform
     runs-on: ubuntu-latest
     container:
       image: node:12-alpine
@@ -38,7 +39,7 @@ jobs:
           submodules: recursive
       - name: Install dependencies
         run: | 
-          npm install
+          npm install 
           npm run build
       - name: Cache build directory 
         uses: actions/cache@v2
