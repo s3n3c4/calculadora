@@ -64,9 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Wait for 10 minutes
-        uses: dawidd6/action-wait-for-time@v1.1
-        with:
-          seconds: 600
+        run: sleep 600
       - name: Terraform destroy
         run: terraform destroy -auto-approve 
         working-directory: ./terraform/
