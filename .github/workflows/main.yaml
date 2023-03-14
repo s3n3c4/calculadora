@@ -18,7 +18,7 @@ jobs:
       - name: Terraform.init
         run: terraform init
         working-directory: ./terraform/
-      - name: Terraform-apply
+      - name: TfApply
         run: terraform apply -auto-approve 
         continue-on-error: true
         working-directory: ./terraform/
@@ -33,7 +33,7 @@ jobs:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
 
   npm-install-and-build-and-deploy:
-    needs: terraform.Terraform-apply
+    needs: terraform.TfApply
     runs-on: ubuntu-latest
     container:
       image: node:12-alpine
