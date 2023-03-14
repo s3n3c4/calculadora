@@ -62,14 +62,14 @@ jobs:
 
   DestroyBucket:
     runs-on: ubuntu-latest
-    - name: Wait for 10 minutes
-      uses: dawidd6/action-wait-for-time@v1.1
-      with:
-        seconds: 600
-    - name: Terraform destroy
-      run: terraform destroy -auto-approve 
-      working-directory: ./terraform/
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+      - name: Wait for 10 minutes
+        uses: dawidd6/action-wait-for-time@v1.1
+        with:
+          seconds: 600
+      - name: Terraform destroy
+        run: terraform destroy -auto-approve 
+        working-directory: ./terraform/
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
